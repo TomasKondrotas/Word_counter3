@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spCounterOption;
+    private EditText etEnteredText;
+    private TextView tvResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
      spCounterOption = findViewById(R.id.spCounterOption);
+     etEnteredText = findViewById(R.id.etEnteredText);
+     tvResult = findViewById(R.id.tvResult);
 
 
         spCounterOption =  findViewById(R.id.spCounterOption);
@@ -27,5 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void onBtnClick(View view) {
+        Toast.makeText(this, spCounterOption.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
     }
 }
