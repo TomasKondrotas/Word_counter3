@@ -38,5 +38,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBtnClick(View view) {
         Toast.makeText(this, spCounterOption.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+
+        String spSelectedOption = spCounterOption.getSelectedItem().toString();
+        String charString = getString(R.string.selection_chars);
+
+        if (spSelectedOption.equalsIgnoreCase(charString)) {
+            String enteredUserText = etEnteredText.getText().toString();
+            int charsCount = TextCounter.getCharsCount(enteredUserText);
+
+            tvResult.setText(String.valueOf(charsCount));
+
+        }
+        else {
+            Toast.makeText(this, "Not implemented", Toast.LENGTH_SHORT);
+
+        }
+
+        }
     }
-}
