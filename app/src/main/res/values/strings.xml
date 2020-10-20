@@ -4,6 +4,5 @@
     <string-array name="selection_options">
         <item>Chars</item>
         <item>Words</item>
-        <item>Numbers</item>
     </string-array>
 </resources>

@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else {
-            Toast.makeText(this, "Not implemented", Toast.LENGTH_SHORT);
-
+            String enteredUserText = etEnteredText.getText().toString();
+            int stringCount = TextCounter.countStrings(enteredUserText);
+            tvResult.setText(String.valueOf(stringCount));
         }
 
         }

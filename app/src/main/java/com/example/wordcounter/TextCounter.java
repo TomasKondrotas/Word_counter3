@@ -5,5 +5,12 @@ public class TextCounter {
         return text.length();
     }
 
+
+    public static int countStrings(String text) {
+
+        return text.split("\\s+").length;
+
+    }
+
 }
 
