@@ -31,29 +31,28 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.selection_options, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spCounterOption.setAdapter(adapter);
-
-
-
     }
 
     public void onBtnClick(View view) {
-        Toast.makeText(this, spCounterOption.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
 
         String spSelectedOption = spCounterOption.getSelectedItem().toString();
         String charString = getString(R.string.selection_chars);
+        String enteredUserText = etEnteredText.getText().toString();
 
-        if (spSelectedOption.equalsIgnoreCase(charString)) {
-            String enteredUserText = etEnteredText.getText().toString();
+        if (enteredUserText.isEmpty()){
+            Toast.makeText(this, R.string.empty, Toast.LENGTH_SHORT).show();
+        }
+
+
+        else if (spSelectedOption.equalsIgnoreCase(charString)) {
             int charsCount = TextCounter.getCharsCount(enteredUserText);
 
             tvResult.setText(String.valueOf(charsCount));
 
         }
         else {
-            String enteredUserText = etEnteredText.getText().toString();
             int stringCount = TextCounter.countStrings(enteredUserText);
             tvResult.setText(String.valueOf(stringCount));
         }
-
         }
     }

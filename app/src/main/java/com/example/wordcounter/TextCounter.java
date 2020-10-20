@@ -7,9 +7,7 @@ public class TextCounter {
 
 
     public static int countStrings(String text) {
-
         return text.split("\\s+").length;
-
     }
 
 }
